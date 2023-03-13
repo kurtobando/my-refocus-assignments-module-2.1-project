@@ -1,6 +1,7 @@
 export class NewsCard {
     constructor() {
         this._article = {};
+        this._onHoverEventListener = null;
         this._onCloseEventListener = null;
         this._onHeartEventListener = null;
     }
@@ -11,25 +12,26 @@ export class NewsCard {
 
     create() {
         const card = document.createElement('section');
-
         const image = this.createImage();
         const title = this.createTitle();
         const createdAt = this.createCreatedAt();
         const heart = this.createHeart();
+        const heartActive = this.createHeartActive();
         const heartCount = this.createHeartCount();
         const close = this.createClose();
         const check = this.createCheck();
         const content = this.createContent();
         const meta = this.createMeta();
 
+        card.addEventListener('mouseenter', () => this._onHoverEventListener(this._article.id), { once: true });
         close.addEventListener('click', () => this._onCloseEventListener(this._article.id));
         heart.addEventListener('click', () => this._onHeartEventListener(this._article.id));
 
         meta.appendChild(createdAt);
-        meta.appendChild(heart);
+        this._article.is_heart ? meta.appendChild(heartActive) : meta.appendChild(heart);
         meta.appendChild(heartCount);
 
-        content.appendChild(check);
+        this._article.is_read ? content.appendChild(check) : null;
         content.appendChild(title);
         content.appendChild(meta);
 
@@ -66,10 +68,15 @@ export class NewsCard {
     }
 
     createHeart() {
-        const heart = document.createElement('img');
-        heart.src = '/assets/icons/heart/heart.svg';
+        const heart = document.createElement('span');
         heart.classList.add('news-card-heart');
         return heart;
+    }
+
+    createHeartActive() {
+        const heartActive = document.createElement('span');
+        heartActive.classList.add('news-card-heart-active');
+        return heartActive;
     }
 
     createHeartCount() {
@@ -92,8 +99,7 @@ export class NewsCard {
     }
 
     createClose() {
-        const close = document.createElement('img');
-        close.src = '/assets/icons/cross/cross.svg';
+        const close = document.createElement('span');
         close.classList.add('news-card-close');
         return close;
     }
@@ -105,7 +111,7 @@ export class NewsCard {
         return check;
     }
 
-    onClose(cb) {
+    onRemove(cb) {
         if (!cb) return;
         this._onCloseEventListener = cb;
     }
@@ -113,5 +119,10 @@ export class NewsCard {
     onHeart(cb) {
         if (!cb) return;
         this._onHeartEventListener = cb;
+    }
+
+    onHover(cb) {
+        if (!cb) return;
+        this._onHoverEventListener = cb;
     }
 }

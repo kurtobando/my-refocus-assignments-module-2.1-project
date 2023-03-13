@@ -4,10 +4,22 @@
     background-color: $white-slate-100;
     border-radius: 6px;
     position: relative;
+    cursor: pointer;
     h2 {
         font-weight: 700;
         font-size: 20px;
         line-height: 130%;
+    }
+
+    &:hover {
+        .news-card-image-gradient {
+            &::after {
+                background: linear-gradient($dark-blue 0%, rgba(0, 0, 0, 0));
+            }
+        }
+        .news-card-close {
+            display: block;
+        }
     }
 }
 
@@ -19,7 +31,6 @@
         top: 0;
         width: 100%;
         height: 50%;
-        background: linear-gradient($dark-blue 0.8%, rgba(0, 0, 0, 0));
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
     }
@@ -27,6 +38,7 @@
 
 .news-card-image {
     width: 100%;
+    height: 240px;
     object-fit: cover;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -43,10 +55,41 @@
 }
 
 .news-card-close {
+    display: none;
     position: absolute;
     top: 1.3rem;
     right: 1rem;
     cursor: pointer;
+    height: 20px;
+    width: 20px;
+    background-image: url('../assets/icons/cross/cross.svg');
+    &:hover {
+        display: block;
+        background-image: url('../assets/icons/cross/cross-hover.svg');
+    }
+    &:active {
+        display: block;
+        background-image: url('../assets/icons/cross/cross-active.svg');
+    }
+}
+.news-card-heart {
+    display: block;
+    height: 14px;
+    width: 16px;
+    background-image: url('../assets/icons/heart/heart.svg');
+    &:hover {
+        background-image: url('../assets/icons/heart/heart-hover.svg');
+    }
+    &:active {
+        background-image: url('../assets/icons/heart/heart-active.svg');
+    }
+}
+
+.news-card-heart-active {
+    display: block;
+    height: 14px;
+    width: 16px;
+    background-image: url('../assets/icons/heart/heart-active.svg');
 }
 
 .news-card-meta {

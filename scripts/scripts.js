@@ -5,25 +5,40 @@ import { NewsCard } from './_news-card.js';
 const newsFeedDom = document.getElementById('news-feed');
 const newsFeed = new NewsFeed();
 
-newsFeed.setNewsFeed(news);
-newsFeed
-    .getNewsFeed()
-    .sort((a, b) => b.id - a.id)
-    .map((article) => {
-        const newsCard = new NewsCard();
+function onLoadNewsFeed() {
+    newsFeed.setNewsFeed(news);
+}
 
-        newsCard.setArticle(article);
-        newsCard.onClose(onClose);
-        newsCard.onHeart(onHeart);
-        newsFeedDom.appendChild(newsCard.create());
-    });
+function onRenderNewsFeed() {
+    newsFeedDom.innerHTML = '';
+    newsFeed
+        .getNewsFeed()
+        .sort((a, b) => b.id - a.id)
+        .filter((article) => !article.is_remove)
+        .map((article) => {
+            const newsCard = new NewsCard();
 
-function onClose(id) {
-    console.log('close');
-    console.log(id);
+            newsCard.setArticle(article);
+            newsCard.onRemove(onRemove);
+            newsCard.onHeart(onHeart);
+            newsCard.onHover(onHover);
+            newsFeedDom.appendChild(newsCard.create());
+        });
+}
+
+function onRemove(id) {
+    newsFeed.setAsRemovedByArticleId(id, () => onRenderNewsFeed());
 }
 
 function onHeart(id) {
-    console.log('heart');
-    console.log(id);
+    newsFeed.setAsHeartByArticleId(id, () => onRenderNewsFeed());
 }
+
+function onHover(id) {
+    newsFeed.setAsReadByArticleId(id, () => onRenderNewsFeed());
+}
+
+window.addEventListener('load', () => {
+    onLoadNewsFeed();
+    onRenderNewsFeed();
+});
