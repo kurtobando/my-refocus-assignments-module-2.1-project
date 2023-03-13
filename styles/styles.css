@@ -1,0 +1,222 @@
+@import url("https://meyerweb.com/eric/tools/css/reset/reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+.font-light {
+  font-weight: 300;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-xs {
+  font-size: 0.8rem;
+}
+
+.text-sm {
+  font-size: 0.9rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-md {
+  font-size: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+}
+
+.text-xl {
+  font-size: 2rem;
+}
+
+.text-2xl {
+  font-size: 2.5rem;
+}
+
+.text-white {
+  color: #FFFFFF;
+}
+
+.text-white-slate-100 {
+  color: #F8F9FC;
+}
+
+.text-white-slate-200 {
+  color: #D7F8FF;
+}
+
+.text-gray {
+  color: #C0BFCF;
+}
+
+.text-gray-slate-100 {
+  color: #9D9DB5;
+}
+
+.text-black {
+  color: #10131C;
+}
+
+.text-blue {
+  color: #0266FF;
+}
+
+.text-dark-blue {
+  color: #192140;
+}
+
+.text-yellow {
+  color: #DCF10D;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.max-width {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  font-weight: 500;
+  color: #FFFFFF;
+  background-color: #192140;
+}
+header a {
+  color: inherit;
+}
+header a.active {
+  color: #DCF10D;
+  text-decoration: underline;
+}
+header .navigation-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  padding-bottom: 0.5rem;
+}
+header .navigation-desktop {
+  display: none;
+}
+header .navigation-desktop .sign-up {
+  color: #C0BFCF;
+}
+header .navigation-desktop .log-in {
+  color: #0266FF;
+  border: 1px solid #0266FF;
+  border-radius: 40px;
+  padding: 1rem 1.2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  header .navigation-mobile {
+    display: none;
+  }
+  header .navigation-desktop {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    align-items: center;
+  }
+  header .navigation-desktop .menu {
+    align-items: center;
+  }
+  header .navigation-desktop .menu-auth {
+    align-items: center;
+  }
+}
+.news-card h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+}
+
+footer {
+  color: #FFFFFF;
+  background-color: #10131C;
+  padding: 4rem 1rem;
+}
+footer a {
+  color: inherit;
+}
+footer a:hover {
+  color: #DCF10D;
+  text-decoration: underline !important;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer .container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 60% 40%;
+    grid-template-areas: "blog follow-us" "courses copyright";
+  }
+  footer .blog {
+    grid-area: blog;
+  }
+  footer .courses {
+    grid-area: courses;
+  }
+  footer .follow-us {
+    grid-area: follow-us;
+  }
+  footer .copyright {
+    grid-area: copyright;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    margin-bottom: 1.2rem;
+  }
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}/*# sourceMappingURL=styles.css.map */

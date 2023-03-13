@@ -1,136 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge"
-          http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0"
-          name="viewport">
-    <title>Refocus - News Feeds</title>
-</head>
-<body>
-<div>
-    <header>
-        <nav>
-            <a href="#">
-                <img alt="Refocus Logo"
-                     src="assets/refocus-logo.png">
-            </a>
-            <a href="#">
-                <img alt="Menu Icon "
-                     src="assets/icons/hamburger/hamburger.svg">
-            </a>
-        </nav>
-        <nav>
-            <a href="#">
-                <img alt="Refocus Logo"
-                     src="assets/refocus-logo.png">
-            </a>
-            <a href="#">Blog</a>
-            <a href="#">Our courses</a>
-            <a href="#">Free webinars</a>
-            <a href="#">Reviews</a>
-            <a href="#">Sign up</a>
-            <a href="#">Log in</a>
-        </nav>
-    </header>
-    <main id="news-container">
-    </main>
-    <footer>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="IE=edge"
+            http-equiv="X-UA-Compatible" />
+        <meta
+            content="width=device-width, initial-scale=1.0"
+            name="viewport" />
+        <title>Refocus - News Feeds</title>
+        <link
+            href="styles/styles.css"
+            rel="stylesheet" />
+    </head>
+    <body>
         <div>
-            <h3>BLOG</h3>
-            <ul>
-                <li>
-                    <a href="#">Data Analyst</a>
-                </li>
-                <li>
-                    <a href="#">Web Developer</a>
-                </li>
-                <li>
-                    <a href="#">Career</a>
-                </li>
-                <li>
-                    <a href="#">Success Stories</a>
-                </li>
-                <li>
-                    <a href="#">Resume</a>
-                </li>
-                <li>
-                    <a href="#">Hard Skills</a>
-                </li>
-                <li>
-                    <a href="#">Soft Skills</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h3>OUR COURSES</h3>
-            <ul>
-                <li>
-                    <a href="#">Data Analytics</a>
-                </li>
-                <li>
-                    <a href="#">Web Development</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li>
-                    <a href="#">
-                        <img alt="LinkedIn"
-                             src="assets/social-media/icon_in.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Instagram"
-                             src="assets/social-media/icon_in.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Facebook"
-                             src="assets/social-media/icon_fb.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Twitter"
-                             src="assets/social-media/icon_twitter.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Whats Up"
-                             src="assets/social-media/icon_whatsup.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Tiktok"
-                             src="assets/social-media/icon_tiktok.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img alt="Youtube"
-                             src="assets/social-media/icon_youtube.png">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <p>© Refocus Limited 2022</p>
-            <ul>
-                <li>Privacy Policy</li>
-                <li>Terms of Use</li>
-            </ul>
-        </div>
-    </footer>
+            <header>
+                <div class="container max-width">
+                    <nav class="navigation-mobile">
+                        <a href="#">
+                            <img
+                                alt="Refocus Logo"
+                                src="assets/refocus-logo.png" />
+                        </a>
+                        <a href="#">
+                            <img
+                                alt="Menu Icon "
+                                src="assets/icons/hamburger/hamburger.svg" />
+                        </a>
+                    </nav>
+                    <nav class="navigation-desktop">
+                        <div>
+                            <a href="#">
+                                <img
+                                    alt="Refocus Logo"
+                                    src="assets/refocus-logo.png" />
+                            </a>
+                        </div>
+                        <div class="flex gap-3 menu">
+                            <div class="flex gap-2 menu-pages">
+                                <a
+                                    href="#"
+                                    class="active">
+                                    Blog
+                                </a>
+                                <a href="#">Our Courses</a>
+                                <a href="#">Free Webinars</a>
+                                <a href="#">Reviews</a>
+                            </div>
+                            <div class="flex gap-1 menu-auth">
+                                <a
+                                    href="#"
+                                    class="sign-up">
+                                    Sign up
+                                </a>
+                                <a
+                                    href="#"
+                                    class="log-in">
+                                    Log in
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main
+                class="max-width"
+                id="news-feed"></main>
+            <footer>
+                <div class="container max-width">
+                    <div class="blog">
+                        <h3 class="font-bold">BLOG</h3>
+                        <ul class="flex flex-wrap gap-1 mt-1 text-sm font-light">
+                            <li>
+                                <a href="#">Data Analyst</a>
+                            </li>
+                            <li>
+                                <a href="#">Web Developer</a>
+                            </li>
+                            <li>
+                                <a href="#">Career</a>
+                            </li>
+                            <li>
+                                <a href="#">Success Stories</a>
+                            </li>
+                            <li>
+                                <a href="#">Resume</a>
+                            </li>
+                            <li>
+                                <a href="#">Hard Skills</a>
+                            </li>
+                            <li>
+                                <a href="#">Soft Skills</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="courses">
+                        <h3 class="font-bold">OUR COURSES</h3>
+                        <ul class="flex gap-1 mt-1 text-sm font-light">
+                            <li>
+                                <a href="#">Data Analytics</a>
+                            </li>
+                            <li>
+                                <a href="#">Web Development</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="follow-us">
+                        <h3 class="font-light">Follow Us</h3>
+                        <ul class="flex flex-wrap gap-1 mt-1">
+                            <li>
+                                <a href="#">
+                                    <img
+                                        alt="LinkedIn"
+                                        src="assets/social-media/icon_in.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img
+                                        alt="Instagram"
+                                        src="assets/social-media/icon_insta.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img
+                                        alt="Facebook"
+                                        src="assets/social-media/icon_fb.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img
+                                        alt="Twitter"
+                                        src="assets/social-media/icon_twitter.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img
+                                        alt="Whats Up"
+                                        src="assets/social-media/icon_whatsup.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img
+                                        alt="Tiktok"
+                                        src="assets/social-media/icon_tiktok.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img
+                                        alt="Youtube"
+                                        src="assets/social-media/icon_youtube.png" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-1 text-gray-slate-100 text-sm font-light copyright">
+                        <p>© Refocus Limited 2022</p>
+                        <ul class="flex gap-1">
+                            <li>Privacy Policy</li>
+                            <li>Terms of Use</li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
 
-    <script src="scripts/scripts.js"
-            type="module"></script>
-</div>
-</body>
+            <script
+                src="scripts/scripts.js"
+                type="module"></script>
+        </div>
+    </body>
 </html>

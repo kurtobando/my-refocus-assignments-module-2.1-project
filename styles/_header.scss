@@ -1,0 +1,57 @@
+@import '_colors.scss';
+@import '_mixin.scss';
+
+header {
+    font-weight: 500;
+    color: $white;
+    background-color: $dark-blue;
+
+    a {
+        color: inherit;
+    }
+    a.active {
+        color: $yellow;
+        text-decoration: underline;
+    }
+
+    .navigation-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 1rem;
+        padding-bottom: 0.5rem;
+    }
+    .navigation-desktop {
+        display: none;
+        .sign-up {
+            color: $gray;
+        }
+        .log-in {
+            color: $blue;
+            border: 1px solid $blue;
+            border-radius: 40px;
+            padding: 1rem 1.2rem;
+        }
+    }
+}
+
+@include tablet {
+    header {
+        .navigation-mobile {
+            display: none;
+        }
+        .navigation-desktop {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            align-items: center;
+
+            .menu {
+                align-items: center;
+            }
+            .menu-auth {
+                align-items: center;
+            }
+        }
+    }
+}

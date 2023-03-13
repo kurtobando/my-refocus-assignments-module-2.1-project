@@ -1,0 +1,49 @@
+@import '_colors.scss';
+@import '_mixin.scss';
+
+footer {
+    color: $white;
+    background-color: $black;
+    padding: 4rem 1rem;
+    a {
+        color: inherit;
+        &:hover {
+            color: $yellow;
+            text-decoration: underline !important;
+        }
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+}
+
+@include desktop {
+    footer {
+        .container {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 60% 40%;
+            grid-template-areas:
+                'blog follow-us'
+                'courses copyright';
+        }
+        .blog {
+            grid-area: blog;
+        }
+        .courses {
+            grid-area: courses;
+        }
+        .follow-us {
+            grid-area: follow-us;
+        }
+        .copyright {
+            grid-area: copyright;
+            display: flex;
+            flex-direction: row;
+            align-self: flex-end;
+            margin-bottom: 1.2rem;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+@import '_colors.scss';
+@import '_view-ports.scss';
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-xs {
+    font-size: 0.8rem;
+}
+.text-sm {
+    font-size: 0.9rem;
+}
+
+.text-base {
+    font-size: 1rem;
+}
+
+.text-md {
+    font-size: 1.25rem;
+}
+
+.text-lg {
+    font-size: 1.5rem;
+}
+
+.text-xl {
+    font-size: 2rem;
+}
+
+.text-2xl {
+    font-size: 2.5rem;
+}
+
+.text-white {
+    color: $white;
+}
+
+.text-white-slate-100 {
+    color: $white-slate-100;
+}
+
+.text-white-slate-200 {
+    color: $white-slate-200;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+.text-gray-slate-100 {
+    color: $gray-slate-100;
+}
+
+.text-black {
+    color: $black;
+}
+
+.text-blue {
+    color: $blue;
+}
+
+.text-dark-blue {
+    color: $dark-blue;
+}
+
+.text-yellow {
+    color: $yellow;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.gap-3 {
+    gap: 3rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.max-width {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
