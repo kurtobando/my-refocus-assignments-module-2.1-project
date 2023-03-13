@@ -37,14 +37,11 @@ export class NewsFeed {
             return;
         }
 
-        if (this._news.find((article) => article.id === id && article.is_heart === true)) {
-            return;
-        }
-
         this._news = this._news.map((article) => {
             if (article.id === id) {
-                article.is_heart = true;
+                article.is_heart = !article.is_heart;
             }
+
             return article;
         });
 

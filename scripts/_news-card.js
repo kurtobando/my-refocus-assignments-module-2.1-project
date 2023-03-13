@@ -1,3 +1,5 @@
+import { formatHearts } from './_format-hearts.js';
+
 export class NewsCard {
     constructor() {
         this._article = {};
@@ -23,9 +25,10 @@ export class NewsCard {
         const content = this.createContent();
         const meta = this.createMeta();
 
-        card.addEventListener('mouseenter', () => this._onHoverEventListener(this._article.id), { once: true });
+        card.addEventListener('mouseenter', () => this._onHoverEventListener(this._article.id));
         close.addEventListener('click', () => this._onCloseEventListener(this._article.id));
         heart.addEventListener('click', () => this._onHeartEventListener(this._article.id));
+        heartActive.addEventListener('click', () => this._onHeartEventListener(this._article.id));
 
         meta.appendChild(createdAt);
         this._article.is_heart ? meta.appendChild(heartActive) : meta.appendChild(heart);
@@ -81,7 +84,7 @@ export class NewsCard {
 
     createHeartCount() {
         const heartCount = document.createElement('span');
-        heartCount.innerText = this._article.hearts;
+        heartCount.innerText = formatHearts(this._article.hearts);
         heartCount.classList.add('news-card-heart-count');
         return heartCount;
     }

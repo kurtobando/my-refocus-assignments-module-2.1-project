@@ -2,6 +2,8 @@ import { news } from './_news.js';
 import { NewsFeed } from './_news-feed.js';
 import { NewsCard } from './_news-card.js';
 
+const navDropDown = document.querySelector('.navigation-mobile-dropdown');
+const navIcon = document.getElementById('navigation-icon');
 const newsFeedDom = document.getElementById('news-feed');
 const newsFeed = new NewsFeed();
 
@@ -29,7 +31,6 @@ function onRenderNewsFeed() {
         .filter((article) => !article.is_remove)
         .map((article) => {
             const newsCard = new NewsCard();
-
             newsCard.setArticle(article);
             newsCard.onRemove(onRemove);
             newsCard.onHeart(onHeart);
@@ -38,7 +39,6 @@ function onRenderNewsFeed() {
         });
 }
 
-window.addEventListener('load', () => {
-    onLoadNewsFeed();
-    onRenderNewsFeed();
-});
+navIcon.addEventListener('click', (e) => navDropDown.classList.toggle('active'));
+window.addEventListener('load', () => onLoadNewsFeed());
+window.addEventListener('load', () => onRenderNewsFeed());
