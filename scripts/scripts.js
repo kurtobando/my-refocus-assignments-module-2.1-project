@@ -5,6 +5,18 @@ import { NewsCard } from './_news-card.js';
 const newsFeedDom = document.getElementById('news-feed');
 const newsFeed = new NewsFeed();
 
+function onRemove(id) {
+    newsFeed.setAsRemovedByArticleId(id, () => onRenderNewsFeed());
+}
+
+function onHeart(id) {
+    newsFeed.setAsHeartByArticleId(id, () => onRenderNewsFeed());
+}
+
+function onHover(id) {
+    newsFeed.setAsReadByArticleId(id, () => onRenderNewsFeed());
+}
+
 function onLoadNewsFeed() {
     newsFeed.setNewsFeed(news);
 }
@@ -24,18 +36,6 @@ function onRenderNewsFeed() {
             newsCard.onHover(onHover);
             newsFeedDom.appendChild(newsCard.create());
         });
-}
-
-function onRemove(id) {
-    newsFeed.setAsRemovedByArticleId(id, () => onRenderNewsFeed());
-}
-
-function onHeart(id) {
-    newsFeed.setAsHeartByArticleId(id, () => onRenderNewsFeed());
-}
-
-function onHover(id) {
-    newsFeed.setAsReadByArticleId(id, () => onRenderNewsFeed());
 }
 
 window.addEventListener('load', () => {
