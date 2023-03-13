@@ -4,12 +4,21 @@
 @import '_utility.scss';
 @import '_colors.scss';
 @import '_header.scss';
+@import "_news-feed.scss";
 @import '_news-card.scss';
 @import '_footer.scss';
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+}
+
+main {
+    padding: 1rem;
 }
 
 a {
